@@ -1,11 +1,12 @@
-import './App.css'
+import { useState } from 'react'
 function App() {
-  
 
+ const[color,setColor]=useState("olive");
   return (
     <>
-      <h1>bg changer</h1>
-      <h2>I am nikhil</h2>
+      <div className="w-full h-screen duration-200">
+           Hi 
+      </div>
     </>
   )
 }

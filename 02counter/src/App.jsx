@@ -1,6 +1,4 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 
 // function App() {
@@ -29,15 +27,18 @@ function App() {
 
    const addValue=()=>{
     if(counter<20){
-    setCounter(counter=counter+1);
-    console.log("added",counter);
-    }
+    setCounter(counter+1); // counter will be 15 not 16, because usestate works with batch,so it will update together
+    console.log("counter",counter);
+    setCounter(counter+1);
+    console.log("new counter",counter+1);
+    setCounter((prevCounter)=>{return(prevCounter+1)}) // setcounter function has callback, now its updated every time.
+  }
    }
    const removeValue=()=>{
     if(counter>0)
     {
     setCounter(counter=counter-1);
-    console.log("removed",counter);                                   
+    console.log("counter",counter);                                   
    }
   }
   return(
