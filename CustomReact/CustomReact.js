@@ -4,6 +4,7 @@ function renderElement(childEl,parentEl)
   domEl.innerHTML= childEl.children;
   domEl.setAttribute("href",childEl.props.href);
   domEl.setAttribute("target",childEl.props.target);
+  parentEl.appendChild(domEl);
 }
 const reactElement = {
     type:"a",
